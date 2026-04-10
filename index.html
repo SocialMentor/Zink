@@ -2,69 +2,57 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Zink</title>
+<title>ZINK</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: black;
-    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    background: white;
+    color: black;
 }
 
 /* HEADER */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
     position: fixed;
     width: 100%;
-    background: rgba(0,0,0,0.8);
-}
-
-.left {
+    top: 0;
     display: flex;
-    align-items: center;
-}
-
-.menu-btn {
-    font-size: 25px;
-    cursor: pointer;
-    margin-right: 15px;
+    justify-content: space-between;
+    padding: 20px;
+    background: white;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 22px;
     font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
 }
 
-.cart {
-    font-size: 20px;
+.menu-btn {
+    font-size: 22px;
     cursor: pointer;
 }
 
 /* MENU */
 .sidebar {
     position: fixed;
-    left: -250px;
+    left: -300px;
     top: 0;
-    width: 250px;
+    width: 300px;
     height: 100%;
-    background: #111;
-    padding: 20px;
-    transition: 0.3s;
+    background: white;
+    padding: 40px;
+    transition: 0.4s;
 }
 
 .sidebar a {
     display: block;
     margin: 20px 0;
-    color: white;
+    font-size: 18px;
     text-decoration: none;
-}
-
-.sidebar a:hover {
-    color: #aaa;
+    color: black;
 }
 
 .sidebar.active {
@@ -75,68 +63,43 @@ header {
 .hero {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url("hero.jpg") center/cover;
-    text-align: center;
-}
-
-.hero h1 {
     font-size: 60px;
-    letter-spacing: 5px;
+    letter-spacing: 10px;
 }
 
-.btn {
-    padding: 12px 30px;
-    border: 1px solid white;
-    background: transparent;
-    color: white;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: 0.3s;
+/* COLLECTION */
+.collection {
+    padding: 100px 20px;
 }
 
-.btn:hover {
-    background: white;
-    color: black;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
 }
 
-/* PRODUITS */
-.section {
-    padding: 80px 20px;
-}
-
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card {
-    margin: 20px;
-    width: 250px;
-    overflow: hidden;
-}
-
-.card img {
-    width: 100%;
-    transition: 0.4s;
-}
-
-.card img:hover {
-    transform: scale(1.1);
-}
-
-.card p {
+.item {
     text-align: center;
+}
+
+.placeholder {
+    width: 100%;
+    height: 300px;
+    background: #eee;
+}
+
+.item p {
+    margin-top: 10px;
 }
 
 /* FOOTER */
 footer {
-    padding: 40px;
     text-align: center;
-    border-top: 1px solid #222;
+    padding: 40px;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
 }
 </style>
 
@@ -146,59 +109,46 @@ footer {
 
 <!-- MENU -->
 <div class="sidebar" id="menu">
-    <a href="#catalogue">👕 Produits</a>
+    <a href="#collection">Produits</a>
 </div>
 
 <!-- HEADER -->
 <header>
-    <div class="left">
-        <div class="menu-btn" onclick="toggleMenu()">☰</div>
-        <div class="logo">Zink</div>
-    </div>
-    <div class="cart">🛒</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="logo">ZINK</div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-    <h1>ZINK</h1>
-    <p>Streetwear premium</p>
-    <a href="#catalogue">
-        <button class="btn">Voir la collection</button>
-    </a>
+    ZINK
 </section>
 
-<!-- CATALOGUE -->
-<section class="section" id="catalogue">
+<!-- COLLECTION -->
+<section class="collection" id="collection">
 
-    <h2>Pulls</h2>
-    <div class="products">
-        <div class="card">
-            <img src="pull1.jpg">
-            <p>Pull Zink</p>
-        </div>
-    </div>
+    <div class="grid">
 
-    <h2>Vestes</h2>
-    <div class="products">
-        <div class="card">
-            <img src="veste1.jpg">
-            <p>Veste Zink</p>
+        <div class="item">
+            <div class="placeholder"></div>
+            <p>Pull</p>
         </div>
-    </div>
 
-    <h2>T-shirts</h2>
-    <div class="products">
-        <div class="card">
-            <img src="tshirt1.jpg">
-            <p>T-shirt Zink</p>
+        <div class="item">
+            <div class="placeholder"></div>
+            <p>Veste</p>
         </div>
+
+        <div class="item">
+            <div class="placeholder"></div>
+            <p>T-shirt</p>
+        </div>
+
     </div>
 
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <h3>Suivez-nous</h3>
     <p>Instagram : @mathis_spamz</p>
     <p>TikTok : @mathis_spamz</p>
 </footer>
