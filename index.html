@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Zink</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn {
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.cart {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* MENU */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.sidebar a {
+    display: block;
+    margin: 20px 0;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: #aaa;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("hero.jpg") center/cover;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+    letter-spacing: 5px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+/* PRODUITS */
+.section {
+    padding: 80px 20px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    margin: 20px;
+    width: 250px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    transition: 0.4s;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+.card p {
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- MENU -->
+<div class="sidebar" id="menu">
+    <a href="#catalogue">👕 Produits</a>
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="left">
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <div class="logo">Zink</div>
+    </div>
+    <div class="cart">🛒</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>ZINK</h1>
+    <p>Streetwear premium</p>
+    <a href="#catalogue">
+        <button class="btn">Voir la collection</button>
+    </a>
+</section>
+
+<!-- CATALOGUE -->
+<section class="section" id="catalogue">
+
+    <h2>Pulls</h2>
+    <div class="products">
+        <div class="card">
+            <img src="pull1.jpg">
+            <p>Pull Zink</p>
+        </div>
+    </div>
+
+    <h2>Vestes</h2>
+    <div class="products">
+        <div class="card">
+            <img src="veste1.jpg">
+            <p>Veste Zink</p>
+        </div>
+    </div>
+
+    <h2>T-shirts</h2>
+    <div class="products">
+        <div class="card">
+            <img src="tshirt1.jpg">
+            <p>T-shirt Zink</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>Suivez-nous</h3>
+    <p>Instagram : @mathis_spamz</p>
+    <p>TikTok : @mathis_spamz</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
